@@ -1,0 +1,72 @@
+@import '../../../assets/scss/responsive';
+
+
+.filter-product {
+    width: 100% !important;
+}
+// .menu-bar {
+//   width: 20%;
+// }
+.p-slider .p-slider-range {
+  background: #fbb710 !important;
+}
+.main {
+ 
+  @media #{$breakpoint-xl} {
+    display: flex;
+  }
+  @media #{$breakpoint-lg} {
+    display: flex;
+  }
+  @media #{$breakpoint-md} {
+    display: flex;
+    .filter-product {
+      width: calc(100% - 0px);
+      max-width: calc(100% - 0px);
+    }
+  
+    .shop_sidebar_area {
+      display: none;
+    }
+  }
+  @media #{$breakpoint-sm} {
+    display: flex;
+    .filter-product {
+      width: calc(100% - 0px);
+      max-width: calc(100% - 0px);
+    }
+  
+    .shop_sidebar_area {
+      display: none;
+    }
+
+  }
+  @media #{$breakpoint-xs} {
+    .shop_sidebar_area {
+      display: none;
+    }
+    .filter-product {
+      width: calc(100% - 0px);
+      max-width: calc(100% - 0px);
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-slider {
+    .p-slider-range {
+      
+      background-color: #fbb710;
+    }
+    .p-slider-handle {
+      background-color: white;
+      border-color:#fbb710;
+      &:hover {
+        background-color: #fbb710;
+        border-color:#fbb710;
+      }
+    }
+    
+      
+  }
+}

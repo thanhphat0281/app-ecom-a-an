@@ -1,0 +1,60 @@
+<div class="main">
+    
+        <div class="shop_sidebar_area">
+          <!-- ##### Single Widget ##### -->
+          <div class="widget catagory mb-50">
+            <!-- Widget Title -->
+            <h6 class="widget-title mb-30">Catagories</h6>
+      
+            <!--  Catagories  -->
+            <div class="catagories-menu">
+              <ul *ngFor="let item of listCategory">
+                <li class=""><a (click)="getProductByCategory(item.nameCategory)">{{item.nameCategory}}</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- ##### Single Widget ##### -->
+          <div class="widget brands mb-50">
+            <!-- Widget Title -->
+            <h6 class="widget-title mb-30">Brands</h6>
+            <div class="widget-desc" *ngFor="let brand of listBrand">
+              <!-- Single Form Check -->
+              <div class="form-check">
+                <input class="form-check-input"   (click)="getProductByBrand( brand.name)" type="checkbox" value="" id="{{brand.name}}" />
+                <label class="form-check-label" for="{{brand.name}}">{{brand.name}}</label>
+              </div>
+            </div>
+          </div>
+          <!-- ##### Single Widget ##### -->
+          <div class="widget color mb-50">
+            <!-- Widget Title -->
+            <h6 class="widget-title mb-30">Color</h6>
+            <div class="widget-desc">
+              <ul class="d-flex" >
+                <li *ngFor="let item of listColor">
+                  <a  (click)="getProductByColor(item.nameColor)"  [style]="'background-color:'+item.codeColor"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- ##### Single Widget ##### -->
+          <div class="widget price mb-50">
+            <!-- Widget Title -->
+            <h6 class="widget-title mb-30">Price</h6>
+      
+            <div class="widget-desc">
+              <div class="slider-range">
+                  <p-slider [(ngModel)]="rangeValues" [step]=20 [max]=1000 (onChange)="rangePrice(rangeValues)" [range]="true"></p-slider>
+                  <h6  class="range-price"> {{'$'+rangeValues[0] + ' - ' + '$'+rangeValues[1]}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <div class="filter-product">
+        <app-filter-product [filterProduct]="filterProduct"></app-filter-product>
+      </div>
+      
+
+</div>

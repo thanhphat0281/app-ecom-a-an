@@ -1,0 +1,50 @@
+
+<body>
+    <div *ngIf="message ===true"  class="search section-padding-100">
+        <div class="search-close">
+            <a (click)="close()" > <i style="width:50px" class="fa fa-close" aria-hidden="true"></i></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <input class="form-control" [(ngModel)]="searchText" (ngModelChange)="onChangeSearchInput()" autocomplete="on"  type="text" name="search" id="search" placeholder="Type your keyword...">
+                        <button type="submit"><img src="../../../assets/img/core-img/search.png" alt=""></button>
+                    </div>
+                    <div *ngIf="sttSearch" class="croll">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                              <th>Image</th>
+                              <th>Name</th>
+                              <th>Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let item of listProduct| filter:searchText">
+                              <td><img class="img-product" src={{item.image}} alt=""></td>
+                              <td>{{item.title}}</td>
+                              <td>{{item.price}}</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="main-content-wrapper d-flex clearfix">
+            <div class="list-menu">
+                <app-top-nav></app-top-nav>
+                <app-side-nav ></app-side-nav>
+            </div>
+            <div class="content">
+                <ng-content></ng-content>
+            </div>
+    </div>
+    <div>
+        <app-bottom-nav></app-bottom-nav>
+    </div>
+    
+</body>

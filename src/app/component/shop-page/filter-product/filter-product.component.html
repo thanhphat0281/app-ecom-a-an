@@ -1,0 +1,102 @@
+<div class="amado_product_area section-padding-100">
+    <div class="container-fluid">
+        <p-dataView #dv [value]="listProduct" [rows]="viewChange" filterBy="name" [paginator]="true" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
+            <ng-template pTemplate="header"  class="product-topbar">
+                <div class="total-products">
+                    <p>Showing 1-8 0f 25</p>             
+                </div>
+                <div class="options" >
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                    <div class="list-opt d-flex">
+                        <div class="sort d-flex">
+                            <p class="title-sort">Sort By</p>
+                            <p-dropdown [style]="{'border':'none','background':'#f5f7fa','border-radius':'0px'}" [options]="sortOptions" (onChange)="onSortChange($event)" styleClass="mb-2 md:mb-0 "></p-dropdown>
+                        </div>
+                        <div class="sort d-flex">
+                            <p>View</p>
+                            <p-dropdown [style]="{'border':'none','background':'#f5f7fa','border-radius':'0px'}" [options]="viewOptions"   (onChange)="onViewChange($event)" styleClass="mb-2 md:mb-0"></p-dropdown>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template let-product pTemplate="listItem"  >
+                <div  class="col-12 ">
+                    <div   class="product-list-item">
+                        <div  class="product-list-detail row single-product-wrapper">
+                            <div [routerLink]="['/product',product .id]" class="product-img-list col-4">
+                                <img src={{product.image}} alt="">
+                            </div>
+                            <div class="product-description col-8  ">
+                                <div class="rate-price product-meta-data">
+                                    <a style="margin-bottom: 20px;" class="product-name" [routerLink]="['/product',product .id]" href=""> <h6>{{product.title}}</h6></a>
+                                    <p-rating   [ngModel]="product.rating.rate" [readonly]="true" [cancel]="false"></p-rating>
+                                </div>
+                                <div class="row price-cart">
+                                        <p class="product-price">${{product.price}}</p>
+                                        <a class="add-cart" (click)="addToCart(product)" title="Add to Cart"   ><img src="../../../../assets/img/core-img/cart.png" alt=""></a>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            
+            <ng-template let-product pTemplate="gridItem"  >
+                <div  style="padding: 20px 40px;"  class="col-6 ">
+                    <div class="single-product-wrapper">
+                        <div  [routerLink]="['/product',product .id]"class="product-img">
+                            
+                                <img src={{product.image}} alt="">
+                            
+                        </div>
+                        <div class="product-description  ">
+                            <div class="product-meta-data row d-flex align-items-center justify-content-between">
+                                <div class="col-6">
+                                    <div class="line"></div> <br>
+                                    <p class="product-price">${{product.price}}</p>
+                                </div>
+                                <div class="col-6">
+                                    <p-rating  [ngModel]="product.rating.rate" [readonly]="true" [cancel]="false"></p-rating>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="product-description d-flex align-items-center justify-content-between">
+                            <div class="product-meta-data" style="width: 95%;">
+                                <a href="" [routerLink]="['/product',product.id]"><h6>{{product.title}}</h6></a>
+                            </div>
+                            <div class="ratings-cart text-right">
+                             
+                                <div class="cart">
+                                    <a class="add-cart" (click)="addToCart(product)"  title="Add to Cart"><img src="../../../../assets/img/core-img/cart.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                   
+                        
+                        
+                   
+                </div>
+
+            </ng-template>
+            
+        </p-dataView>
+        <!-- <div class="row">
+            <div class="col-12">
+                
+                
+                <nav aria-label="navigation">
+           
+                    <ul class="pagination justify-content-end mt-50">
+                        <li class="page-item active"><a class="page-link" href="">01.</a></li>
+                        <li class="page-item"><a class="page-link" href="">02.</a></li>
+                        <li class="page-item"><a class="page-link" href="">03.</a></li>
+                        <li class="page-item"><a class="page-link" href="">04.</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div> -->
+    </div>
+</div>
+

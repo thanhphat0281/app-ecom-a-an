@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="amado-pro-catagory  col-4" *ngFor="let item of listProduct.slice(0,9)">
+
+        <!-- Single Catagory -->
+        <div class=" single-products-catagory">
+            <a >
+                <img src={{item.image}} alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From {{item.price}}</p>
+                    <h4>{{item.title}}</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

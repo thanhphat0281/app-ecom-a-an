@@ -1,0 +1,122 @@
+@import '../../../../assets/scss/responsive';
+
+.item {
+    width: 100%;
+}
+.options {
+    @media #{$breakpoint-xl} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    @media #{$breakpoint-lg} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    @media #{$breakpoint-md} {
+    }
+    @media #{$breakpoint-sm} {
+       
+    }
+    @media #{$breakpoint-xs} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    @media #{$breakpoint-xs-landscape} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+  }
+
+.product-img-list {
+   img {
+    width: 240px;
+    height: 320px;
+    padding: 15px;
+    cursor: pointer;
+   }
+}
+.rate-price {
+    height: 50%;
+    padding: 60px;
+}
+.price-cart {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+}
+.add-cart {
+    img {
+        margin: 10px;
+        width: 20px;
+    }
+}
+.sort {
+    margin-left: 10px;
+    p {
+        height: 48px;
+        width: 75px;
+        background: #f5f7fa;
+        padding: 9px 10px;
+    }
+}
+.style-dropdown {
+    border: none;
+}
+
+:host ::ng-deep .p-dataview {
+    .p-grid{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .p-dataview-grid{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .p-rating-icon {
+        font-size: 12px;
+        color: #fbb710;
+        margin-left: 3px
+    }
+    .p-highlight {
+        background-color: #fbb710 !important;
+        border-color: #fbb710;
+        // &:hover{
+        //     background-color: #fbb710 !important;
+        //     border-color: #fbb710;
+        // }
+    }
+    .p-dataview-header {
+        background-color: white;
+        border: none;
+    }
+    .p-paginator-prev, .p-paginator-first, .p-paginator-next,.p-paginator-last {
+        display: none;
+    }
+    .p-paginator-page {
+        border-radius: 0;
+        &:hover {
+        background-color: #fbb710 !important;
+        }
+    }
+    .p-paginator {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    
+}   
+
+
+
+
+
+
+
+   
+
